@@ -1,13 +1,14 @@
 import './index.css'
-import { NavBar } from './components/NavBar'
+//import { NavBar } from './components/NavBar'
+import { SideBar } from './components/SideBar'
+import { Routes, Route } from "react-router";
 
-import logoDark from './assets/logo-dark.svg'
 
 function App() {
   
   return (
     <div>
-      <NavBar logo={logoDark}/>
+      <SideBar />
     </div>
   )
 }
