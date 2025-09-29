@@ -10,8 +10,6 @@ import iconDark from '../assets/icon-dark-theme.svg'
 import iconHide from '../assets/icon-hide-sidebar.svg'
 import iconShow from '../assets/icon-show-sidebar.svg'
 
-
-
 const num = boards.length
 
 const boardNames = boards.map((board) => board.name)
@@ -86,7 +84,7 @@ export const SideBar = () => {
             }
             {
                 !sideBar &&
-                <div className='flex h-[85vh] w-[55px] flex-col justify-end relative'>
+                <div className='flex h-[100vh] w-[55px] flex-col justify-around '>
                     <button
                         className='bg-[#635FC7] pl-4 py-4 pr-2 rounded-r-2xl'
                         onClick={hiddeShowSideBar}

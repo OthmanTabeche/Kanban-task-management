@@ -1,8 +1,8 @@
 
 export const Board = () => {
     return (
-        <div className="bg-red-500">
-            Esto es el board
+        <div className="bg-[#F4F7FD]">
+            <h1>Soy el Board</h1>
         </div>
     )
 }

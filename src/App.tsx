@@ -8,10 +8,11 @@ import { Routes, Route } from "react-router";
 function App() {
   
   return (
-      <div className='flex'>
-          <SideBar />
+      <div className='flex w-screen h-screen'>
+        <div className='flex flex-col w-full h-screen'>
           <NavBar />
           <Board />
+        </div>
       </div>
   )
 }
