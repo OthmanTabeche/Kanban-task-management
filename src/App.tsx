@@ -1,15 +1,18 @@
 import './index.css'
-//import { NavBar } from './components/NavBar'
+import { NavBar } from './components/NavBar'
 import { SideBar } from './components/SideBar'
+import { Board } from './components/Board';
 import { Routes, Route } from "react-router";
 
 
 function App() {
   
   return (
-    <div>
-      <SideBar />
-    </div>
+      <div className='flex'>
+          <SideBar />
+          <NavBar />
+          <Board />
+      </div>
   )
 }
 

@@ -9,7 +9,6 @@ import iconLight from '../assets/icon-light-theme.svg'
 import iconDark from '../assets/icon-dark-theme.svg'
 import iconHide from '../assets/icon-hide-sidebar.svg'
 import iconShow from '../assets/icon-show-sidebar.svg'
-import { Outlet } from 'react-router';
 
 
 
@@ -27,12 +26,19 @@ export const SideBar = () => {
     }
 
     return (
-        <div className="relative flex flex-col justify-center bg-white max-w-[275px]">
+        <div className="relative flex flex-col justify-center w-[350px]">
             <img
                 className="w-[152.53px] h-[25.22px] m-7"
                 src={logo} 
                 alt="logo" 
             />
+            {!sideBar && 
+                <div>
+                    <hr className="bg-[#E4EBFA] border-0 h-[1px] w-100vh" style={{ visibility: 'visible' }} />
+                    <div className="absolute right-0 top-0 bottom-0 w-px h-[81px] bg-[#E4EBFA]" />
+                </div>
+                
+            }
             {
                 sideBar &&
                 <div className='ml-7'>
