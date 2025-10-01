@@ -1,8 +1,8 @@
 
 export const Board = () => {
     return (
-        <div className="bg-[#F4F7FD]">
-            <h1>Soy el Board</h1>
+        <div className="bg-purple-500 text-white flex items-center justify-center text-2xl font-bold">
+          3
         </div>
     )
 }

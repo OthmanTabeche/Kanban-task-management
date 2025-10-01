@@ -1,18 +1,16 @@
 import './index.css'
-import { NavBar } from './components/NavBar'
 import { SideBar } from './components/SideBar'
-import { Board } from './components/Board';
-import { Routes, Route } from "react-router";
+import { NavBar } from './components/NavBar'
+import { Board } from './components/Board'
 
 
 function App() {
   
   return (
-      <div className='flex w-screen h-screen'>
-        <div className='flex flex-col w-full h-screen'>
-          <NavBar />
-          <Board />
-        </div>
+      <div className="grid grid-cols-[300px_1fr] grid-rows-[97px_1fr] h-screen w-full m-0">
+        <SideBar />
+        <NavBar />
+        <Board />
       </div>
   )
 }
