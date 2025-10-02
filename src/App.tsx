@@ -1,12 +1,13 @@
 import './index.css'
 import { SideBar } from './components/SideBar'
 import { NavBar } from './components/NavBar'
-import { Board } from './components/Board'
+import { Kanban } from './components/Kanban'
 import { useState } from 'react'
 import { boards } from './data.json'
+import type { Board } from './types'
 
 function App() {
-  const [data, setData] = useState(boards) //el setData lo usare para hacer el feching de la API
+  const [data] = useState<Board[]>(boards) //el setData lo usare para hacer el feching de la API
   const [darkMode, setDarkMode] = useState(false)
   const [hideSidebar, setHideSidebar] = useState(true)
 
@@ -23,7 +24,7 @@ function App() {
           toggleSidebar={toggleSidebar}
         />}
         <NavBar />
-        <Board />
+        <Kanban />
       </div>
   )
 }

@@ -4,33 +4,7 @@ import IconLight from '../assets/icon-light-theme.svg?react'
 import IconDark from '../assets/icon-dark-theme.svg?react'
 import IconHide from '../assets/icon-hide-sidebar.svg?react'
 import Switch from "react-switch";
-
-interface Subtask {
-  title: string;
-  isCompleted: boolean;
-}
-
-interface Task {  
-  title: string;
-  description: string;
-  status: string;
-  subtasks: Subtask[];
-}
-
-interface Column {
-  name: string;
-  tasks: Task[];
-}
-
-interface Board {
-  name: string;
-  columns: Column[];
-} 
-
-interface Board {
-  name: string;
-  columns: Column[];
-}
+import type { Board } from '../types'
 
 interface SideBarProps {
   data: Board[]
@@ -43,6 +17,7 @@ export const SideBar = ({data, darkMode, setDarkMode, toggleSidebar}: SideBarPro
   const numOfBoards = data.length
   const boardNames = data.map((board) => board.name)
   
+
   return (
         <div className="row-span-2 flex flex-col p-5 text-2xl">
           <div className="flex items-center mb-10">
