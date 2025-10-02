@@ -11,10 +11,9 @@ interface SideBarProps {
   darkMode: boolean
   setDarkMode: (value: boolean) => void
   toggleSidebar: () => void
-  hideSidebar: boolean
 }
 
-export const SideBar = ({data, darkMode, setDarkMode, toggleSidebar, hideSidebar}: SideBarProps) => {
+export const SideBar = ({data, darkMode, setDarkMode, toggleSidebar}: SideBarProps) => {
   const numOfBoards = data.length
   const boardNames = data.map((board) => board.name)
   
