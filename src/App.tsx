@@ -26,7 +26,6 @@ function App() {
           data={data} 
           darkMode={darkMode} 
           setDarkMode={setDarkMode} 
-          hideSidebar={hideSidebar}
           toggleSidebar={toggleSidebar}
         />}
         <NavBar />
