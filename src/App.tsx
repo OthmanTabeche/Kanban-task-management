@@ -1,16 +1,36 @@
 import './index.css'
 import { SideBar } from './components/SideBar'
 import { NavBar } from './components/NavBar'
-import { Board } from './components/Board'
-
+import { Kanban } from './components/Kanban'
+import { useState } from 'react'
+import { boards } from './data.json'
+import type { Board } from './types'
+import clsx from 'clsx'
+import { ShowSideBarBtn } from './components/ShowSideBarBtn'
 
 function App() {
+  const [data] = useState<Board[]>(boards) //el setData lo usare para hacer el feching de la API
+  const [darkMode, setDarkMode] = useState(false)
+  const [hideSidebar, setHideSidebar] = useState(true)
+
+  const toggleSidebar = () => {
+    setHideSidebar(!hideSidebar)
+  }
   
   return (
-      <div className="grid grid-cols-[300px_1fr] grid-rows-[97px_1fr] h-screen w-full m-0">
-        <SideBar />
+      <div className={clsx(
+        'grid grid-rows-[97px_1fr] h-screen w-full m-0',
+        hideSidebar ? 'grid-cols-[300px_1fr]' : 'grid-cols-1'
+      )}>
+        {hideSidebar  && <SideBar 
+          data={data} 
+          darkMode={darkMode} 
+          setDarkMode={setDarkMode} 
+          toggleSidebar={toggleSidebar}
+        />}
         <NavBar />
-        <Board />
+        <Kanban />
+        {!hideSidebar && <ShowSideBarBtn toggleSidebar={toggleSidebar} />}
       </div>
   )
 }
